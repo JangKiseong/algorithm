@@ -1,0 +1,41 @@
+const permutation = (arr, selectNum) => {
+    const result = [];
+    if(selectNum === 1) return arr.map(v => [v]);
+  
+    arr.forEach((e, idx, arr) => {
+        const restArr = arr.filter((_, index) => index !== idx);
+        const permutationArr = permutation(restArr, selectNum - 1);
+        const combineFixer = permutationArr.map(x => [e, ...x]);
+        result.push(...combineFixer);
+    });
+
+    return result;
+}
+
+const multisetPermutation = (arr, selectNum) => {
+    const result = [];
+    if(selectNum === 1) return arr.map(v => [v]);
+  
+    arr.forEach((e, _, arr) => {
+        const restArr = arr;
+        const permutationArr = permutation(restArr, selectNum - 1);
+        const combineFix = permutationArr.map(x => [e, ...x]);
+        result.push(...combineFix);
+    });
+    return result;
+  }
+
+const combination = (arr, selectNum) => {
+    const result = [];
+    if(selectNum === 1) return arr.map(v => [v]);
+
+    arr.forEach((v, idx, arr) => {
+        const fixed = v;
+        const restArr = arr.slice(idx + 1);
+        const combinationArr = combination(restArr, selectNum - 1);
+        const combineFix = combinationArr.map(v => [fixed, ...v]);
+        result.push(...combineFix);
+    });
+
+    return result;
+}
