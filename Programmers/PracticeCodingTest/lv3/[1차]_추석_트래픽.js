@@ -4,50 +4,39 @@
 function solution(lines) {
     let answer = 0;
     const takingTimes = [];
-    const stack = [];
+    let firstStartTime = 0;
+    let lastEndTime = 0;
+    let index = 0;
+    if(lines.length === 1) return 1;
 
     lines.forEach(line => {
         const splitLine = line.split(" ");
-        const endTimes = new Date(splitLine[0]+" "+splitLine[1]).getTime();
-        const startTimes = endTimes - Number(splitLine[2].replace("s",""))*1000;
-        takingTimes.push([startTimes, endTimes]);
+        const endTime = new Date(splitLine[0]+" "+splitLine[1]).getTime();
+        const startTime = endTime - Number(splitLine[2].replace("s",""))*1000+1;
+        takingTimes.push([startTime, endTime]);
     });
 
-    takingTimes.forEach(times => {
-        if(!stack.length) stack.push(times);
-        else if(times[0] - stack[stack.length-1][0] < 1000){
-            if(stack[stack.length-1][0] < times[0]){
-                stack.shift();
-                stack.push(times);
-                if(stack.length > answer) answer = stack.length;
-            } else {
-                stack.push(times);
-                if(stack.length > answer) answer = stack.length;
-            }
-        } else if(times[0] - stack[stack.length-1][1] < 1000){
-            stack.push(times);
-            if(stack.length > answer) answer = stack.length;
-        } else {
-            stack.shift();
-            stack.push(times);
-            if(stack.length > answer) answer = stack.length;
-        }
-    })
+    while(index < takingTimes.length){
+        const startBasket = [];
+        const endBasket = [];
+
+        firstStartTime = takingTimes[index][0];
+        lastEndTime = takingTimes[index][1];
+
+        takingTimes.forEach(time => {
+            if((time[0] <= firstStartTime && time[1] >= firstStartTime) 
+                || (time[0] >= firstStartTime && time[1] <= firstStartTime+999) 
+                || (time[0] <= firstStartTime+999 && time[1] >= firstStartTime+999)) 
+                startBasket.push(time);
+            if((time[0] <= lastEndTime && time[1] >= lastEndTime) 
+                || (time[0] >= lastEndTime && time[1] <= lastEndTime+999) 
+                || (time[0] <= lastEndTime+999 && time[1] >= lastEndTime+999)) 
+                endBasket.push(time);
+        })
+        if(answer < startBasket.length) answer = startBasket.length;
+        if(answer < endBasket.length) answer = endBasket.length;
+        index++;
+    }
 
     return answer;
 }
-
-const lines =  [
-    "2016-09-15 20:59:57.421 0.351s",
-    "2016-09-15 20:59:58.233 1.181s",
-    "2016-09-15 20:59:58.299 0.8s",
-    "2016-09-15 20:59:58.688 1.041s",
-    "2016-09-15 20:59:59.591 1.412s",
-    "2016-09-15 21:00:00.464 1.466s",
-    "2016-09-15 21:00:00.741 1.581s",
-    "2016-09-15 21:00:00.748 2.31s",
-    "2016-09-15 21:00:00.966 0.381s",
-    "2016-09-15 21:00:02.066 2.62s"
-    ]
-
-console.log(solution(lines));
