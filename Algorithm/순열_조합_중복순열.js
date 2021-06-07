@@ -18,12 +18,12 @@ const multisetPermutation = (arr, selectNum) => {
   
     arr.forEach((e, _, arr) => {
         const restArr = arr;
-        const permutationArr = permutation(restArr, selectNum - 1);
+        const permutationArr = multisetPermutation(restArr, selectNum - 1);
         const combineFix = permutationArr.map(x => [e, ...x]);
         result.push(...combineFix);
     });
     return result;
-  }
+}
 
 const combination = (arr, selectNum) => {
     const result = [];
