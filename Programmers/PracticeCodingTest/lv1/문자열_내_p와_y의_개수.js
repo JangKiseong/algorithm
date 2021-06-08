@@ -14,5 +14,3 @@ function solution(s){
     if(pNum === yNum) return true;
     else return false;
 }
-
-console.log(solution("Pyy"))
