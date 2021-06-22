@@ -3,27 +3,14 @@
 
 function solution(n,a,b) {
     let answer = 0;
-    let participantArray = new Array(n).fill(0);
-    let index = 0;
 
-    participantArray[a-1] = 1;
-    participantArray[b-1] = 1;
+    if(a <= n/2 && b > n/2) return Math.log2(n);
+    else if(a > n/2 && b <= n/2) return Math.log2(n);
 
-    while(true){
-
-        if(participantArray[index] === 1 && participantArray[index+1] === 1) break;
-        else if(participantArray[index] === 1){
-            participantArray.splice(index+1, 1);
-            index += 2;
-        } else {
-            participantArray.splice(index, 1);
-            index += 2;
-        }
-
-        if(index >= participantArray.length) index = 0, answer++;
+    while(a !== b){
+        a = Math.ceil(a/2);
+        b = Math.ceil(b/2);
+        answer ++;
     }
-
     return answer;
 }
-
-console.log(solution(2**15,5,393));
