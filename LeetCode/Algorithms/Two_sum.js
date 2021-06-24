@@ -2,8 +2,11 @@
  * Problems
  * 1. Two Sum
  * https://leetcode.com/problems/two-sum/
- * Runtime: 184 ms (faster than 9.62%)
- * Memory Usage: 39.6 MB (less than 24.88%)
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ * Runtime: 180 ms (faster than 11.54 %)
+ * Memory Usage: 39.7 MB (less than 27.38 %)
  */
 
 const twoSum = (nums, target) => {

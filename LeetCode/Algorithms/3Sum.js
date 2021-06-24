@@ -2,8 +2,10 @@
  * Problems
  * 15. 3Sum
  * https://leetcode.com/problems/3sum/
- * Runtime: 136 ms (faster than 97.64%)
- * Memory Usage: 49.1 MB (less than 49.62%)
+ * @param {number[]} nums
+ * @return {number[][]}
+ * Runtime: 136 ms (faster than 96.86 %)
+ * Memory Usage: 49 MB (less than 53.08 %)
  */
 
 const threeSum = (nums) => {
