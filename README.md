@@ -12,6 +12,6 @@ Lv2 : 22
 Lv3 : 1
 
 - LeetCode   
-Easy : 30   
+Easy : 35   
 Medium : 1   
 Hard : 0
