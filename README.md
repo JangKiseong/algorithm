@@ -8,10 +8,10 @@
 
 - Programmers   
 Lv1 : 49   
-Lv2 : 22   
+Lv2 : 24   
 Lv3 : 1
 
 - LeetCode   
-Easy : 35   
+Easy : 40   
 Medium : 1   
 Hard : 0
