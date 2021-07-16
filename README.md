@@ -7,11 +7,11 @@
 해결 문제 수
 
 - Programmers   
-Lv1 : 49   
-Lv2 : 24   
+Lv1 : 50   
+Lv2 : 27   
 Lv3 : 1
 
 - LeetCode   
-Easy : 40   
+Easy : 44   
 Medium : 1   
 Hard : 0
