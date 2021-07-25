@@ -5,8 +5,8 @@
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @returns {number[]} 
- * Runtime:  ms (faster than  %)
- * Memory Usage:  MB (less than  %)
+ * Runtime: 80 ms (faster than 61.63 %)
+ * Memory Usage: 40.2 MB (less than 48.24 %)
  */
 
 const intersection = (nums1, nums2) => {
