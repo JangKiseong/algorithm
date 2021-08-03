@@ -8,7 +8,7 @@
 
 - Programmers   
 Lv1 : 50   
-Lv2 : 39   
+Lv2 : 40   
 Lv3 : 1
 
 - LeetCode   
