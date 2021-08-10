@@ -10,6 +10,7 @@
 Lv1 : 50   
 Lv2 : 40   
 Lv3 : 1
+위클리 챌린지 : 2
 
 - LeetCode   
 Easy : 79   
