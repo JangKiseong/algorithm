@@ -13,6 +13,6 @@ Lv3 : 1
 위클리 챌린지 : 2
 
 - LeetCode   
-Easy : 79   
+Easy : 81   
 Medium : 2   
 Hard : 0
