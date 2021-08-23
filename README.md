@@ -8,7 +8,7 @@
 
 - Programmers   
 Lv1 : 50   
-Lv2 : 42   
+Lv2 : 43   
 Lv3 : 1
 위클리 챌린지 : 2
 
