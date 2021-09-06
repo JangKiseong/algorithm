@@ -8,9 +8,9 @@
 
 - Programmers   
 Lv1 : 50   
-Lv2 : 43   
+Lv2 : 45   
 Lv3 : 1
-위클리 챌린지 : 5
+위클리 챌린지 : 6
 
 - LeetCode   
 Easy : 95   
