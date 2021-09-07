@@ -8,8 +8,8 @@
 
 - Programmers   
 Lv1 : 50   
-Lv2 : 46   
-Lv3 : 1
+Lv2 : 47   
+Lv3 : 2
 위클리 챌린지 : 6
 
 - LeetCode   
